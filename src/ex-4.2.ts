@@ -1,5 +1,5 @@
 function processData(data: unknown): string {
-  return data.toUpperCase();
+  return typeof data === "string" ? data.toUpperCase() : "Not a string";
 }
 
 console.log(processData("hello")); // ควรได้ "HELLO"
