@@ -112,14 +112,16 @@ function totalByStatusWithDiscount (orders: Order[], targetStatus: OrderStatus):
   },0 )
 }
 
-const totalShipped = totalByStatusWithDiscount(ordersSample, "shipped");
+let orders: Array<Order> = ordersSample
+
+const totalShipped = totalByStatusWithDiscount(orders, "shipped");
 console.log("Total for shipped orders with discount:", totalShipped);
 
-const totalPending = totalByStatusWithDiscount(ordersSample, "pending");
+const totalPending = totalByStatusWithDiscount(orders, "pending");
 console.log("Total for pending orders:", totalPending);
 
-const totalDelivered = totalByStatusWithDiscount(ordersSample, "delivered");
+const totalDelivered = totalByStatusWithDiscount(orders, "delivered");
 console.log("Total for delivered orders:", totalDelivered);
 
-const totalCancelled = totalByStatusWithDiscount(ordersSample, "cancelled");
+const totalCancelled = totalByStatusWithDiscount(orders, "cancelled");
 console.log("Total for cancelled orders:", totalCancelled);
