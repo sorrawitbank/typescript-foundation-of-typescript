@@ -111,10 +111,7 @@ function totalByStatusWithDiscount(
   return orders
     .filter((order) => order.status === targetStatus)
     .reduce(
-      (acc, cur) =>
-        cur.discount
-          ? acc + cur.price * cur.quantity - cur.discount
-          : acc + cur.price * cur.quantity,
+      (acc, cur) => acc + cur.price * cur.quantity - (cur.discount ?? 0),
       0
     );
 }
